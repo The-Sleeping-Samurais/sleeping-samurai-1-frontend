@@ -1,3 +1,3 @@
 Sleeping Samurai project
 
-Developement
+Developement part 2
