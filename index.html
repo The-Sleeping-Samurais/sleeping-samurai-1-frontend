@@ -21,10 +21,10 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
           Sign Up
         </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal">
         Sign In
       </button>
       </ul>
@@ -32,6 +32,49 @@
 
   </nav>
   <!-- END NAV BAR -->
-</body>
 
+<!-- Sign Up modal  -->
+<div id="sign-up-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <form id="sign-up">
+          <input name="credentials[email]" type="text" placeholder="Your E-Mail">
+          <input name="credentials[password]" type="password" placeholder="Password">
+          <input name="submit" type="submit" class="sign-up-btn" value="Submit">
+        </form>
+      </div>
+      <!-- <div class="modal-footer">
+      <input name="submit" type="submit" class="sign-up-btn" value="Submit">
+      </div> -->
+    </div>
+  </div>
+</div>
+<!-- end Sign Up Modal  -->
+<!--Sign In modal  -->
+<div id="sign-in-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Sign In</h4>
+      </div>
+      <div class="modal-body">
+        <form id="sign-in">
+          <input name="credentials[email]" type="text" placeholder="Your E-Mail">
+          <input name="credentials[password]" type="password" placeholder="Password">
+          <input name="submit" type="submit" class="sign-up-btn" value="Submit">
+        </form>
+      </div>
+      <!-- <div class="modal-footer">
+      <input name="submit" type="submit" class="sign-up-btn" value="Submit">
+      </div> -->
+    </div>
+  </div>
+</div>
+</body>
 </html>
