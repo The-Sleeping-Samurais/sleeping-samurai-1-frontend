@@ -10,8 +10,24 @@ const signInSuccess = (data) => {
 const signInFailure = () => {
 }
 
+const changePasswordSuccess = () => {
+}
+
+const changePasswordFailure = () => {
+}
+
+const signOutSuccess = () => {
+}
+
+const signOutFailure = () => {
+}
+
 module.exports = {
   signUpFailure,
   signInSuccess,
-  signInFailure
+  signInFailure,
+  changePasswordSuccess,
+  changePasswordFailure,
+  signOutSuccess,
+  signOutFailure
 }
