@@ -6,6 +6,7 @@ const config = require('./config')
 $(() => {
   setAPIOrigin(location, config)
 })
+//look to hide first navbar
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')

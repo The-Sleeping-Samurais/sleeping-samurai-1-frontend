@@ -1,2 +1,13 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+.jumbotron {
+  background-image: url('./Bank_Vault_3D_Wallpaper-HD.jpg');
+  background-size: cover;
+  height: 100vh;
+
+}
+
+.navbar {
+  margin-bottom: 0;
+}
