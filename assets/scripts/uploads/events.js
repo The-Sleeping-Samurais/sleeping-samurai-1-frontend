@@ -11,6 +11,43 @@ const createUploadMultiPart = function (event) {
     .catch(uploadUi.error)
 }
 
+const onGetUploads = function (event) {
+  uploadApi.getUploads()
+  .then(uploadUi.success)
+  .catch(uploadUi.failure)
+}
+
+const onGetOneUpload = function (event) {
+  uploadApi.getOneUpload()
+  .then(uploadUi.success)
+  .catch(uploadUi.failure)
+}
+
+const onDeleteUpload = function (data) {
+  uploadApi.deleteUpload(this.id)
+    .then(uploadUi.success)
+    .catch(uploadUi.failure)
+}
+
+const onUpdateUpload = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  uploadApi.updateUpload(data)
+    .then(uploadUi.succes)
+    .catch(uploadUi.failure)
+}
+
+// Adding listeners below
+const addHandlers = function () {
+  $('#multipart-form-data').on('submit', createUploadMultiPart)
+  $('#showUploadsButton').on('click', onGetUploads)
+}
+
 module.exports = {
-  createUploadMultiPart
+  createUploadMultiPart,
+  onGetUploads,
+  onGetOneUpload,
+  onDeleteUpload,
+  onUpdateUpload,
+  addHandlers
 }

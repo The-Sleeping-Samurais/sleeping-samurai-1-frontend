@@ -16,6 +16,51 @@ const createMulti = function (data) {
   })
 }
 
+const getUploads = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/uploads/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const getOneUpload = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/uploads/' + data,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const deleteUpload = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/uploads/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const updateUpload = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/uploads/' + data.upload.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
-  createMulti
+  createMulti,
+  getUploads,
+  getOneUpload,
+  deleteUpload,
+  updateUpload
 }
