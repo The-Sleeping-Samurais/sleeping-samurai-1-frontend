@@ -11,6 +11,19 @@ const createUploadMultiPart = function (event) {
     .catch(uploadUi.error)
 }
 
+const onGetUploads = function (event) {
+  uploadApi.getUploads()
+  .then(uploadUi.success)
+  .catch(uploadUi.failure)
+}
+
+const addHandlers = function () {
+  $('#multipart-form-data').on('submit', createUploadMultiPart)
+  $('#showUploadsButton').on('click', onGetUploads)
+}
+
 module.exports = {
-  createUploadMultiPart
+  createUploadMultiPart,
+  onGetUploads,
+  addHandlers
 }
