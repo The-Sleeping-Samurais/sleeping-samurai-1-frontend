@@ -7,7 +7,7 @@
 
   <!-- Do not add `link` tags unless you know what you are doing -->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
+  <link href=“https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css” rel=“stylesheet”>
   <!-- Do not add `script` tags unless you know what you are doing -->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
@@ -61,6 +61,23 @@
     </fieldset>
   </form>
 </div>
+
+<table id="vault"
+         class="table"
+         data-toggle="table"
+         data-sort-name="title"
+         data-sort-order="desc">
+      <thead>
+      <tr>
+          <th data-field="Name"
+              data-sortable="true">
+                  Name
+          </th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+  </table>
 
 
 <!-- ALLLLLLL MODAL BODIES BELOW HERE -->

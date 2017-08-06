@@ -1,8 +1,11 @@
 'use strict'
 const store = require('../store')
+const uploadsTemplate = require('../templates/table-uploads.handlebars')
 
 const success = function (data) {
   console.log('success data is:', data)
+  const uploadsHtml = uploadsTemplate({ uploads: data.uploads })
+  $('#vault').append(uploadsHtml)
 }
 
 const error = function (error) {
