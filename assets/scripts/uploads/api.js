@@ -46,20 +46,21 @@ const deleteUpload = function (data) {
   })
 }
 
-// const updateUpload = function (data) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/uploads/' + data.upload.id,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//   })
-// }
+const updateUpload = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/uploads/' + data.upload.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 
 module.exports = {
   createMulti,
   getUploads,
   getOneUpload,
-  deleteUpload
+  deleteUpload,
+  updateUpload
 }
