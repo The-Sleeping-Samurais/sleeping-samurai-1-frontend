@@ -12,6 +12,7 @@ const createUploadMultiPart = function (event) {
 }
 
 const onGetUploads = function (event) {
+  $('.content').empty()
   uploadApi.getUploads()
   .then(uploadUi.success)
   .catch(uploadUi.failure)
@@ -19,6 +20,14 @@ const onGetUploads = function (event) {
 
 const onGetOneUpload = function (event) {
   uploadApi.getOneUpload()
+  .then(uploadUi.success)
+  .catch(uploadUi.failure)
+}
+
+// gets the users uploads
+const onGetMyUploads = function (event) {
+  $('.content').empty()
+  uploadApi.getMyUploads()
   .then(uploadUi.success)
   .catch(uploadUi.failure)
 }
@@ -45,6 +54,7 @@ const addHandlers = function () {
   $('#multipart-form-data').on('submit', createUploadMultiPart)
   $('#showUploadsButton').on('click', onGetUploads)
   $('#vault').on('click', '.remove-button', onDeleteUpload)
+  $('#showMyUploadsButton').on('click', onGetMyUploads)
   // $('#vault').on('click', '.update-button', onUpdateUpload)
 }
 
@@ -54,5 +64,6 @@ module.exports = {
   onGetOneUpload,
   onDeleteUpload,
   onUpdateUpload,
+  onGetMyUploads,
   addHandlers
 }
