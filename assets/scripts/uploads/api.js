@@ -36,6 +36,16 @@ const getOneUpload = function (data) {
   })
 }
 
+const getMyUploads = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/useruploads/' + store.user.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const deleteUpload = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/uploads/' + data,
@@ -62,5 +72,6 @@ module.exports = {
   getUploads,
   getOneUpload,
   deleteUpload,
-  updateUpload
+  updateUpload,
+  getMyUploads
 }
