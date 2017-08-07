@@ -12,7 +12,7 @@ const createUploadMultiPart = function (event) {
 }
 
 const onGetUploads = function (event) {
-  $('#vault').empty()
+  $('.content').empty()
   uploadApi.getUploads()
   .then(uploadUi.success)
   .catch(uploadUi.failure)
