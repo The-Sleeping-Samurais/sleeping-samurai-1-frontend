@@ -2,7 +2,15 @@
 
 <tr>
     <td><p class="table-data">{{upload.name}}</p></td>
-
+    <td><p class="table-data">{{upload.id}}</p></td>
+    <td><p class="table-data">{{upload.createdAt}}</p></td>
+    <td><p class="table-data">{{upload.url}}</p></td>
+    <td>
+    <button data-id="{{upload.id}}" class="remove-button btn btn-primary btn-sm" type="submit">delete</button>
+    <button class="update-button btn btn-primary btn-sm" data-id="{{upload.id}}" data-name="{{upload.name}}" data-tag="{{upload.tag}}" type="button">
+    edit
+    </button>
+    </td>
   </tr>
 
 {{/each}}

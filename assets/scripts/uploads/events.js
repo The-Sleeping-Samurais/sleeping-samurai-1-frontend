@@ -23,10 +23,13 @@ const onGetOneUpload = function (event) {
   .catch(uploadUi.failure)
 }
 
-const onDeleteUpload = function (data) {
-  uploadApi.deleteUpload(this.id)
+const onDeleteUpload = function (event) {
+  console.log('this is: ', this)
+  console.log('this.dataset is: ', this.dataset)
+  console.log('this.dataset.id is: ', this.dataset.id)
+  uploadApi.deleteUpload(this.dataset.id)
     .then(uploadUi.success)
-    .catch(uploadUi.failure)
+    .catch(uploadUi.deleteFailure)
 }
 
 const onUpdateUpload = function (event) {
@@ -41,6 +44,8 @@ const onUpdateUpload = function (event) {
 const addHandlers = function () {
   $('#multipart-form-data').on('submit', createUploadMultiPart)
   $('#showUploadsButton').on('click', onGetUploads)
+  $('#vault').on('click', '.remove-button', onDeleteUpload)
+  // $('#vault').on('click', '.update-button', onUpdateUpload)
 }
 
 module.exports = {
