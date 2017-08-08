@@ -16,6 +16,23 @@ const deleteFailure = function (data, error) {
   // $('#vault').append(uploadsHtml)
 }
 
+const createSuccess = function (data) {
+  $('.create-message-board').text('Successfully uploaded file.')
+  $('.create-upload').val('')
+}
+
+const createFailure = function (data, error) {
+  $('.create-upload-message-board').text('Error uploading.')
+}
+
+const updateSuccess = function (data) {
+  $('.edit-upload-message-board').text('Successful update.')
+}
+
+const updateFailure = function (data, error) {
+  $('.edit-upload-message-board').text('Incorrect credentials.')
+}
+
 const error = function (error) {
   console.log('error is:', error)
 }
@@ -23,5 +40,9 @@ const error = function (error) {
 module.exports = {
   success,
   error,
-  deleteFailure
+  deleteFailure,
+  updateFailure,
+  updateSuccess,
+  createFailure,
+  createSuccess
 }

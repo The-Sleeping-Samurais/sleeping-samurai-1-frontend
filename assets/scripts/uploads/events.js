@@ -7,8 +7,8 @@ const createUploadMultiPart = function (event) {
   console.log('it did something in multipart')
   const data = new FormData(event.target)
   uploadApi.createMulti(data)
-    .then(uploadUi.success)
-    .catch(uploadUi.error)
+    .then(uploadUi.createSuccess)
+    .catch(uploadUi.createFailure)
 }
 
 const onGetUploads = function (event) {
@@ -46,6 +46,7 @@ const openUpdateModal = function () {
   const fileDes = $(this).attr('data-des')
   const fileTag = $(this).attr('data-tag')
   const fileId = $(this).attr('data-id')
+  $('.edit-upload-message-board').text('')
   $('#fileName').val(fileName)
   $('#fileDes').val(fileDes)
   $('#fileTag').val(fileTag)
@@ -58,8 +59,8 @@ const onUpdateUpload = function (event) {
   const data = getFormFields(event.target)
   event.preventDefault()
   uploadApi.updateUpload(data, id)
-    .then(uploadUi.success)
-    .catch(uploadUi.failure)
+    .then(uploadUi.updateSuccess)
+    .catch(uploadUi.updateFailure)
 }
 
 // Adding listeners below

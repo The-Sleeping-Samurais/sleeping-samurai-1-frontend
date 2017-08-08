@@ -22,16 +22,19 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password-modal">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-upload-modal" id="createUploadButton">
+          Upload File
+        </button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password-modal" id="changePasswordButton">
           Change Password
         </button>
         <button type="button" class="btn btn-primary" id="sign-out">
           Sign Out
         </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal" id="signUpButton">
           Sign Up
         </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal" id="signInButton">
         Sign In
       </button>
       <button id="showUploadsButton" type="button" class="btn btn-primary">
@@ -48,10 +51,9 @@
 <div class="jumbotron">
 </div>
 
-<div class="upload">
+<!-- <div class="upload">
   <form id="multipart-form-data" enctype="multipart/form-data">
     <fieldset>
-      <legend>enctype="multipart/form-data"</legend>
       <label>
         Title
         <input type="text" name="file[name]">
@@ -72,7 +74,7 @@
       <input type="submit" name="submit" value="Upload">
     </fieldset>
   </form>
-</div>
+</div> -->
 
 <table id="vault"
          class="table"
@@ -114,6 +116,43 @@
 
 <!-- ALLLLLLL MODAL BODIES BELOW HERE -->
 
+<!-- MODAL FOR CREATE UPLOADS -->
+
+<div id="create-upload-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Upload a File</h4>
+      </div>
+      <div class="modal-body">
+        <h2 class="create-message-board"></h2>
+        <form id="multipart-form-data" enctype="multipart/form-data">
+          <fieldset>
+            <label>
+              Title
+              <input type="text" name="file[name]" class="create-upload">
+            </label>
+            <label>
+              Description
+              <textarea type="text" name="file[description]" class="create-upload">
+              </textarea>
+            </label>
+            <label>
+              Tag
+              <input type="text" name="file[tag]" class="create-upload">
+            </label>
+            <label>
+              Image
+              <input type="file" name="file[load]" class="create-upload">
+            </label>
+            <button type="submit" name="submit" value="Upload" class="btn btn-primary">Upload</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- MODAL FOR EDITING UPLOADS -->
 
 <div id="editModal" class="modal fade" tabindex="-1" role="dialog">
@@ -125,6 +164,7 @@
       </div>
       <div class="modal-body">
         <h1 id="fileId"></h1>
+        <h2 class="edit-upload-message-board"></h2>
         <form id="edit-upload-form">
           <label>File Name</label><br>
             <input id="fileName" class="edit-upload" type="text" name="upload[name]" >
@@ -148,6 +188,7 @@
         <h4 class="modal-title">Sign Up</h4>
       </div>
       <div class="modal-body">
+        <h2 class="sign-up-message-board"></h2>
         <form id="sign-up">
           <input class="sign-up" name="credentials[email]" type="text" placeholder="Your E-Mail">
           <input class="sign-up"  name="credentials[password]" type="password" placeholder="Password">
@@ -167,6 +208,7 @@
         <h4 class="modal-title">Change Password</h4>
       </div>
       <div class="modal-body">
+        <h2 class="change-password-message-board"></h2>
         <form id="change-password">
           <input class="change-password" type="password" name="passwords[old]" placeholder="Old Password">
           <input class="change-password" type="password" name="passwords[new]" placeholder="New Password">
@@ -186,6 +228,7 @@
         <h4 class="modal-title">Sign In</h4>
       </div>
       <div class="modal-body">
+        <h2 class="sign-in-message-board"></h2>
         <form id="sign-in">
           <input class="sign-in" name="credentials[email]" type="text" value='jeff@jeff' placeholder="Your E-Mail">
           <input class="sign-in"  name="credentials[password]" type="password" value="jeff" placeholder="Password">
