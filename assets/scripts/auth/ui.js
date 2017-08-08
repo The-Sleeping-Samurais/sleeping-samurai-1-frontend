@@ -13,6 +13,15 @@ const signInSuccess = (data) => {
   $('.sign-up').val('')
   $('#sign-in-modal').modal('hide')
   $('.sign-in').val('')
+  $('#showUploadsButton').show(1000)
+  $('#showMyUploadsButton').show(1000)
+  $('#sign-out').show(1000)
+  $('#changePasswordButton').show(1000)
+  $('.upload').show(1000)
+  $('#vault').show(1000)
+  $('#signUpButton').hide(1000)
+  $('#signInButton').hide(1000)
+  $('.jumbotron').hide(1000)
 }
 
 const signInFailure = () => {
@@ -30,6 +39,16 @@ const changePasswordFailure = () => {
 
 const signOutSuccess = () => {
   console.log('signout success')
+  $('#signUpButton').show(1000)
+  $('#signInButton').show(1000)
+  $('#sign-out').hide(1000)
+  $('#changePasswordButton').hide(1000)
+  $('#showUploadsButton').hide(1000)
+  $('#showMyUploadsButton').hide(1000)
+  $('.jumbotron').show(1000)
+  $('.upload').hide(1000)
+  $('#vault').hide(1000)
+  $('.content').empty()
 }
 
 const signOutFailure = () => {

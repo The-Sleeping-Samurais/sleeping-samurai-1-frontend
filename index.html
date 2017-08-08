@@ -22,16 +22,16 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password-modal">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password-modal" id="changePasswordButton">
           Change Password
         </button>
         <button type="button" class="btn btn-primary" id="sign-out">
           Sign Out
         </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal" id="signUpButton">
           Sign Up
         </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal" id="signInButton">
         Sign In
       </button>
       <button id="showUploadsButton" type="button" class="btn btn-primary">
@@ -51,7 +51,6 @@
 <div class="upload">
   <form id="multipart-form-data" enctype="multipart/form-data">
     <fieldset>
-      <legend>enctype="multipart/form-data"</legend>
       <label>
         Title
         <input type="text" name="file[name]">
