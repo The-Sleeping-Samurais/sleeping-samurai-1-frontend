@@ -19,7 +19,6 @@ const signInSuccess = (data) => {
   $('#sign-out').show(1000)
   $('#changePasswordButton').show(1000)
   $('.upload').show(1000)
-  $('#vault').show(1000)
   $('#signUpButton').hide(1000)
   $('#signInButton').hide(1000)
   $('.jumbotron').hide(1000)

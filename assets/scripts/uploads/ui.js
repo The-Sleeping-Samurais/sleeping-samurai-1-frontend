@@ -1,11 +1,22 @@
 'use strict'
 const store = require('../store')
-const uploadsTemplate = require('../templates/table-uploads.handlebars')
+const browseTemplate = require('../templates/browse-uploads.handlebars')
+const editableTemplate = require('../templates/show-uploads.handlebars')
 
-const success = function (data) {
+const onGetUploadsSuccess = function (data) {
   console.log('success data is:', data)
-  const uploadsHtml = uploadsTemplate({ uploads: data.uploads })
+  const browseHtml = browseTemplate({ uploads: data.uploads })
+  $('#vault').append(browseHtml)
+  $('#vault').show(1000)
+  $('.buttons').hide()
+}
+
+const onGetMyUploadsSuccess = function (data) {
+  console.log('success data is:', data)
+  const uploadsHtml = editableTemplate({ uploads: data.uploads })
   $('#vault').append(uploadsHtml)
+  $('#vault').show(1000)
+  $('.buttons').show()
 }
 
 const deleteFailure = function (data, error) {
@@ -40,11 +51,13 @@ const error = function (error) {
 }
 
 module.exports = {
-  success,
+
   error,
   deleteFailure,
   updateFailure,
   updateSuccess,
   createFailure,
-  createSuccess
+  createSuccess,
+  onGetUploadsSuccess,
+  onGetMyUploadsSuccess
 }

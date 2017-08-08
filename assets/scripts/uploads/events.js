@@ -14,21 +14,21 @@ const createUploadMultiPart = function (event) {
 const onGetUploads = function (event) {
   $('.content').empty()
   uploadApi.getUploads()
-  .then(uploadUi.success)
+  .then(uploadUi.onGetUploadsSuccess)
   .catch(uploadUi.failure)
 }
 
-const onGetOneUpload = function (event) {
-  uploadApi.getOneUpload()
-  .then(uploadUi.success)
-  .catch(uploadUi.failure)
-}
+// const onGetOneUpload = function (event) {
+//   uploadApi.getOneUpload()
+//   .then(uploadUi.success)
+//   .catch(uploadUi.failure)
+// }
 
 // gets the users uploads
 const onGetMyUploads = function (event) {
   $('.content').empty()
   uploadApi.getMyUploads()
-  .then(uploadUi.success)
+  .then(uploadUi.onGetMyUploadsSuccess)
   .catch(uploadUi.failure)
 }
 
@@ -37,7 +37,10 @@ const onDeleteUpload = function (event) {
   console.log('this.dataset is: ', this.dataset)
   console.log('this.dataset.id is: ', this.dataset.id)
   uploadApi.deleteUpload(this.dataset.id)
-    .then(uploadUi.success)
+    .then(() => {
+      uploadUi.success
+      onGetUploads()
+    })
     .catch(uploadUi.deleteFailure)
 }
 
@@ -76,7 +79,6 @@ const addHandlers = function () {
 module.exports = {
   createUploadMultiPart,
   onGetUploads,
-  onGetOneUpload,
   onDeleteUpload,
   onUpdateUpload,
   onGetMyUploads,
