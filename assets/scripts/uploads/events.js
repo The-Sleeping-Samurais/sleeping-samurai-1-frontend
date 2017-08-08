@@ -41,11 +41,24 @@ const onDeleteUpload = function (event) {
     .catch(uploadUi.deleteFailure)
 }
 
+const openUpdateModal = function () {
+  const fileName = $(this).attr('data-name')
+  const fileDes = $(this).attr('data-des')
+  const fileTag = $(this).attr('data-tag')
+  const fileId = $(this).attr('data-id')
+  $('#fileName').val(fileName)
+  $('#fileDes').val(fileDes)
+  $('#fileTag').val(fileTag)
+  $('#fileId').text(fileId)
+  // $('#updateSubmit').data(id, fileId)
+}
+
 const onUpdateUpload = function (event) {
-  const data = getFormFields(this)
+  const id = $('#fileId').text()
+  const data = getFormFields(event.target)
   event.preventDefault()
-  uploadApi.updateUpload(data)
-    .then(uploadUi.succes)
+  uploadApi.updateUpload(data, id)
+    .then(uploadUi.success)
     .catch(uploadUi.failure)
 }
 
@@ -55,7 +68,8 @@ const addHandlers = function () {
   $('#showUploadsButton').on('click', onGetUploads)
   $('#vault').on('click', '.remove-button', onDeleteUpload)
   $('#showMyUploadsButton').on('click', onGetMyUploads)
-  // $('#vault').on('click', '.update-button', onUpdateUpload)
+  $('#edit-upload-form').on('submit', onUpdateUpload)
+  $('#vault').on('click', '.update-button', openUpdateModal)
 }
 
 module.exports = {

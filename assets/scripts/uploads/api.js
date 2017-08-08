@@ -56,9 +56,11 @@ const deleteUpload = function (data) {
   })
 }
 
-const updateUpload = function (data) {
+const updateUpload = function (data, id) {
+  console.log(data)
+  console.log(id)
   return $.ajax({
-    url: config.apiOrigin + '/uploads/' + data.upload.id,
+    url: config.apiOrigin + '/uploads/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
