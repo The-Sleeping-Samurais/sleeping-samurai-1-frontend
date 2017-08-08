@@ -3,6 +3,11 @@
     <td><p class="table-data">{{upload.name}}</p></td>
     <td><p class="table-data">{{upload.description}}</p></td>
     <td><p class="table-data">{{upload.tag}}</p></td>
+    {{#if upload.size}}
+    <td><p class="table-data">{{upload.size}} MB</p></td>
+    {{else}}
+    <td><p class="table-data">Unknown</p></td>
+    {{/if}}
     <td><a class="table-data" href="{{upload.url}}" target="_blank">Click Me</a></td>
     <td><p class="table-data">{{upload.createdAt}}</p></td>
     <td><p class="table-data">{{upload.updatedAt}}</p></td>
