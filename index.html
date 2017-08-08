@@ -1,25 +1,254 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href=“https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css” rel=“stylesheet”>
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-    </body>
+<body>
+
+  <!-- NAV BAR -->
+  <nav class="navbar navbar-default">
+    <div class="navbar-header">
+      <a class="navbar-brand">The Vault</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-upload-modal" id="createUploadButton">
+          Upload File
+        </button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password-modal" id="changePasswordButton">
+          Change Password
+        </button>
+        <button type="button" class="btn btn-primary" id="sign-out">
+          Sign Out
+        </button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal" id="signUpButton">
+          Sign Up
+        </button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal" id="signInButton">
+        Sign In
+      </button>
+      <button id="showUploadsButton" type="button" class="btn btn-primary">
+      Show Uploads
+    </button>
+    <button id="showMyUploadsButton" type="button" class="btn btn-primary">
+    Show My Uploads
+  </button>
+      </ul>
+    </div>
+  </nav>
+  <!-- END NAV BAR -->
+
+<div class="jumbotron">
+</div>
+
+<!-- <div class="upload">
+  <form id="multipart-form-data" enctype="multipart/form-data">
+    <fieldset>
+      <label>
+        Title
+        <input type="text" name="file[name]">
+      </label>
+      <label>
+        Description
+        <textarea type="text" name="file[description]">
+        </textarea>
+      </label>
+      <label>
+        Tag
+        <input type="text" name="file[tag]">
+      </label>
+      <label>
+        Image
+        <input type="file" name="file[load]">
+      </label>
+      <input type="submit" name="submit" value="Upload">
+    </fieldset>
+  </form>
+</div> -->
+
+<table id="vault"
+         class="table"
+         data-toggle="table"
+         data-sort-name="name"
+         data-sort-order="desc">
+      <thead>
+      <tr role="row">
+          <th data-field="name"
+              data-sortable="true">
+                  Name
+          </th>
+          <th data-field="description"
+              data-sortable="true">
+                  Description
+          </th>
+          <th data-field="Tag"
+              data-sortable="true">
+                  Tag
+          </th>
+          <th data-field="Size"
+              data-sortable="true">
+                  File Size
+          </th>
+          <th data-field="URL"
+              data-sortable="true">
+                  URL
+          </th>
+          <th data-field="createDate"
+              data-sortable="true">
+                  Date
+          </th>
+          <th data-field="updateDate"
+              data-sortable="true">
+                  Last Updated
+          </th>
+          <th data-field="edit-delete"
+              data-sortable="false" class="buttons">
+                  Edit/Delete
+          </th>
+      </tr>
+      </thead>
+      <tbody>
+      </tbody>
+  </table>
+
+
+<!-- ALLLLLLL MODAL BODIES BELOW HERE -->
+
+<!-- MODAL FOR CREATE UPLOADS -->
+
+<div id="create-upload-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Upload a File</h4>
+      </div>
+      <div class="modal-body">
+        <h2 class="create-message-board"></h2>
+        <form id="multipart-form-data" enctype="multipart/form-data">
+          <fieldset>
+            <label>
+              Title
+              <input type="text" name="file[name]" class="create-upload">
+            </label>
+            <label>
+              Description
+              <textarea type="text" name="file[description]" class="create-upload">
+              </textarea>
+            </label>
+            <label>
+              Tag
+              <input type="text" name="file[tag]" class="create-upload">
+            </label>
+            <label>
+              Image
+              <input type="file" name="file[load]" class="create-upload">
+            </label>
+            <button type="submit" name="submit" value="Upload" class="btn btn-primary">Upload</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- MODAL FOR EDITING UPLOADS -->
+
+<div id="editModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Edit Your Upload</h4>
+      </div>
+      <div class="modal-body">
+        <h1 id="fileId"></h1>
+        <h2 class="edit-upload-message-board"></h2>
+        <form id="edit-upload-form">
+          <label>File Name</label><br>
+            <input id="fileName" class="edit-upload" type="text" name="upload[name]" >
+          <br><label>Description</label><br>
+          <input id="fileDes" class="edit-upload" type="text" name="upload[description]" >
+          <br><label>Tag</label><br>
+          <input id="fileTag" class="edit-upload" type="text" name="upload[tag]" >
+          <button id="updateSubmit" type="submit" class="btn btn-default" value="edit" name="submit">Edit Upload</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sign Up modal  -->
+<div id="sign-up-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <h2 class="sign-up-message-board"></h2>
+        <form id="sign-up">
+          <input class="sign-up" name="credentials[email]" type="text" placeholder="Your E-Mail">
+          <input class="sign-up"  name="credentials[password]" type="password" placeholder="Password">
+          <button type="submit" class="btn btn-default" value="Sign Up" name="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end Sign Up Modal  -->
+<!-- Change Password modal  -->
+<div id="change-password-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Change Password</h4>
+      </div>
+      <div class="modal-body">
+        <h2 class="change-password-message-board"></h2>
+        <form id="change-password">
+          <input class="change-password" type="password" name="passwords[old]" placeholder="Old Password">
+          <input class="change-password" type="password" name="passwords[new]" placeholder="New Password">
+          <button type="submit" class="btn btn-default" value="Change Password" name="submit">Change Password</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end Change Password Modal  -->
+<!--Sign In modal  -->
+<div id="sign-in-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Sign In</h4>
+      </div>
+      <div class="modal-body">
+        <h2 class="sign-in-message-board"></h2>
+        <form id="sign-in">
+          <input class="sign-in" name="credentials[email]" type="text" value='jeff@jeff' placeholder="Your E-Mail">
+          <input class="sign-in"  name="credentials[password]" type="password" value="jeff" placeholder="Password">
+          <button type="submit" class="btn btn-default" value="Sign In" name="submit">Sign In</button>
+        </form>
+      </div>
+      <!-- <div class="modal-footer">
+      <input name="submit" type="submit" class="sign-up-btn" value="Submit">
+      </div> -->
+    </div>
+  </div>
+</div>
+
+</body>
 </html>
