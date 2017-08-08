@@ -7,28 +7,31 @@ const createUploadMultiPart = function (event) {
   console.log('it did something in multipart')
   const data = new FormData(event.target)
   uploadApi.createMulti(data)
-    .then(uploadUi.createSuccess)
+    .then(() => {
+      uploadUi.createSuccess()
+      onGetMyUploads()
+    })
     .catch(uploadUi.createFailure)
 }
 
 const onGetUploads = function (event) {
   $('.content').empty()
   uploadApi.getUploads()
-  .then(uploadUi.success)
+  .then(uploadUi.onGetUploadsSuccess)
   .catch(uploadUi.failure)
 }
 
-const onGetOneUpload = function (event) {
-  uploadApi.getOneUpload()
-  .then(uploadUi.success)
-  .catch(uploadUi.failure)
-}
+// const onGetOneUpload = function (event) {
+//   uploadApi.getOneUpload()
+//   .then(uploadUi.success)
+//   .catch(uploadUi.failure)
+// }
 
 // gets the users uploads
 const onGetMyUploads = function (event) {
   $('.content').empty()
   uploadApi.getMyUploads()
-  .then(uploadUi.success)
+  .then((uploadUi.onGetMyUploadsSuccess))
   .catch(uploadUi.failure)
 }
 
@@ -37,7 +40,9 @@ const onDeleteUpload = function (event) {
   console.log('this.dataset is: ', this.dataset)
   console.log('this.dataset.id is: ', this.dataset.id)
   uploadApi.deleteUpload(this.dataset.id)
-    .then(uploadUi.success)
+    .then(() => {
+      onGetMyUploads()
+    })
     .catch(uploadUi.deleteFailure)
 }
 
@@ -59,7 +64,10 @@ const onUpdateUpload = function (event) {
   const data = getFormFields(event.target)
   event.preventDefault()
   uploadApi.updateUpload(data, id)
-    .then(uploadUi.updateSuccess)
+    .then(() => {
+      uploadUi.updateSuccess()
+      onGetMyUploads()
+    })
     .catch(uploadUi.updateFailure)
 }
 
@@ -76,7 +84,6 @@ const addHandlers = function () {
 module.exports = {
   createUploadMultiPart,
   onGetUploads,
-  onGetOneUpload,
   onDeleteUpload,
   onUpdateUpload,
   onGetMyUploads,

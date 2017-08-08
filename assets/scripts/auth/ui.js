@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store')
+const uploadActions = require('../uploads/events.js')
 
 const signUpFailure = () => {
   $('.sign-up-message-board').text('Incorrect Credentials')
@@ -19,10 +20,10 @@ const signInSuccess = (data) => {
   $('#sign-out').show(1000)
   $('#changePasswordButton').show(1000)
   $('.upload').show(1000)
-  $('#vault').show(1000)
   $('#signUpButton').hide(1000)
   $('#signInButton').hide(1000)
   $('.jumbotron').hide(1000)
+  uploadActions.onGetMyUploads()
 }
 
 const signInFailure = () => {
@@ -31,11 +32,12 @@ const signInFailure = () => {
 }
 
 const changePasswordSuccess = (data) => {
-  console.log('Change Password Success!')
+  // console.log('Change Password Success!')
   console.log(data)
-  $('.change-password-message-board').text('Successfully changed password.')
+  $('.change-password-message-board').text('')
   // $('#change-password-modal').modal('hide')
   $('.change-password').val('')
+  $('#change-password-modal').modal('hide')
 }
 
 const changePasswordFailure = () => {
