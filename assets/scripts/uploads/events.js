@@ -7,7 +7,10 @@ const createUploadMultiPart = function (event) {
   console.log('it did something in multipart')
   const data = new FormData(event.target)
   uploadApi.createMulti(data)
-    .then(uploadUi.createSuccess)
+    .then(() => {
+      uploadUi.createSuccess()
+      onGetMyUploads()
+    })
     .catch(uploadUi.createFailure)
 }
 
@@ -28,7 +31,7 @@ const onGetUploads = function (event) {
 const onGetMyUploads = function (event) {
   $('.content').empty()
   uploadApi.getMyUploads()
-  .then(uploadUi.onGetMyUploadsSuccess)
+  .then((uploadUi.onGetMyUploadsSuccess))
   .catch(uploadUi.failure)
 }
 
@@ -38,8 +41,7 @@ const onDeleteUpload = function (event) {
   console.log('this.dataset.id is: ', this.dataset.id)
   uploadApi.deleteUpload(this.dataset.id)
     .then(() => {
-      uploadUi.success
-      onGetUploads()
+      onGetMyUploads()
     })
     .catch(uploadUi.deleteFailure)
 }
@@ -62,7 +64,10 @@ const onUpdateUpload = function (event) {
   const data = getFormFields(event.target)
   event.preventDefault()
   uploadApi.updateUpload(data, id)
-    .then(uploadUi.updateSuccess)
+    .then(() => {
+      uploadUi.updateSuccess()
+      onGetMyUploads()
+    })
     .catch(uploadUi.updateFailure)
 }
 

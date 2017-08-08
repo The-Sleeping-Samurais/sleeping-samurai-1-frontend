@@ -1,5 +1,6 @@
 'use strict'
 const store = require('../store')
+const uploadActions = require('../uploads/events.js')
 
 const signUpFailure = () => {
   $('.sign-up-message-board').text('Incorrect Credentials')
@@ -22,6 +23,7 @@ const signInSuccess = (data) => {
   $('#signUpButton').hide(1000)
   $('#signInButton').hide(1000)
   $('.jumbotron').hide(1000)
+  uploadActions.onGetMyUploads()
 }
 
 const signInFailure = () => {
