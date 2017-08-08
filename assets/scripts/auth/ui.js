@@ -2,7 +2,7 @@
 const store = require('../store')
 
 const signUpFailure = () => {
-  console.log('incorrect credentials')
+  $('.sign-up-message-board').text('Incorrect Credentials')
 }
 
 const signInSuccess = (data) => {
@@ -25,12 +25,15 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = () => {
+  $('.sign-in-message-board').text('Incorrect credentials.')
+  $('.sign-in').val('')
 }
 
 const changePasswordSuccess = (data) => {
   console.log('Change Password Success!')
   console.log(data)
-  $('#change-password-modal').modal('hide')
+  $('.change-password-message-board').text('Successfully changed password.')
+  // $('#change-password-modal').modal('hide')
   $('.change-password').val('')
 }
 
