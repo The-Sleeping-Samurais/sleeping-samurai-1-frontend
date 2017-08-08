@@ -22,6 +22,9 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-upload-modal" id="createUploadButton">
+          Upload File
+        </button>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password-modal" id="changePasswordButton">
           Change Password
         </button>
@@ -48,7 +51,7 @@
 <div class="jumbotron">
 </div>
 
-<div class="upload">
+<!-- <div class="upload">
   <form id="multipart-form-data" enctype="multipart/form-data">
     <fieldset>
       <label>
@@ -71,7 +74,7 @@
       <input type="submit" name="submit" value="Upload">
     </fieldset>
   </form>
-</div>
+</div> -->
 
 <table id="vault"
          class="table"
@@ -113,6 +116,43 @@
 
 <!-- ALLLLLLL MODAL BODIES BELOW HERE -->
 
+<!-- MODAL FOR CREATE UPLOADS -->
+
+<div id="create-upload-modal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Upload a File</h4>
+      </div>
+      <div class="modal-body">
+        <h2 class="create-message-board"></h2>
+        <form id="multipart-form-data" enctype="multipart/form-data">
+          <fieldset>
+            <label>
+              Title
+              <input type="text" name="file[name]" class="create-upload">
+            </label>
+            <label>
+              Description
+              <textarea type="text" name="file[description]" class="create-upload">
+              </textarea>
+            </label>
+            <label>
+              Tag
+              <input type="text" name="file[tag]" class="create-upload">
+            </label>
+            <label>
+              Image
+              <input type="file" name="file[load]" class="create-upload">
+            </label>
+            <button type="submit" name="submit" value="Upload" class="btn btn-primary">Upload</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- MODAL FOR EDITING UPLOADS -->
 
 <div id="editModal" class="modal fade" tabindex="-1" role="dialog">

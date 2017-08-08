@@ -14,7 +14,8 @@ $(() => {
   $('#showUploadsButton').hide()
   $('#showMyUploadsButton').hide()
   $('#changePasswordButton').hide()
-  $('.upload').hide()
+  $('#createUploadButton').hide()
+  // $('.upload').hide()
   $('#vault').hide()
 })
 

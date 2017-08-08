@@ -7,8 +7,8 @@ const createUploadMultiPart = function (event) {
   console.log('it did something in multipart')
   const data = new FormData(event.target)
   uploadApi.createMulti(data)
-    .then(uploadUi.success)
-    .catch(uploadUi.error)
+    .then(uploadUi.createSuccess)
+    .catch(uploadUi.createFailure)
 }
 
 const onGetUploads = function (event) {
