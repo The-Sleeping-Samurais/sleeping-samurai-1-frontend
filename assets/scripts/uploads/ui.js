@@ -16,6 +16,14 @@ const deleteFailure = function (data, error) {
   // $('#vault').append(uploadsHtml)
 }
 
+const updateSuccess = function (data) {
+  $('.edit-upload-message-board').text('Successful update.')
+}
+
+const updateFailure = function (data, error) {
+  $('.edit-upload-message-board').text('Incorrect credentials.')
+}
+
 const error = function (error) {
   console.log('error is:', error)
 }
@@ -23,5 +31,7 @@ const error = function (error) {
 module.exports = {
   success,
   error,
-  deleteFailure
+  deleteFailure,
+  updateFailure,
+  updateSuccess
 }
