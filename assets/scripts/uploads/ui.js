@@ -19,6 +19,7 @@ const deleteFailure = function (data, error) {
 const createSuccess = function (data) {
   $('.create-message-board').text('Successfully uploaded file.')
   $('.create-upload').val('')
+  console.log('success data is:', data)
 }
 
 const createFailure = function (data, error) {
