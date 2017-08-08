@@ -27,7 +27,8 @@ const createFailure = function (data, error) {
 }
 
 const updateSuccess = function (data) {
-  $('.edit-upload-message-board').text('Successful update.')
+  // $('.edit-upload-message-board').text('Successful update.')
+  $('#editModal').modal('hide')
 }
 
 const updateFailure = function (data, error) {

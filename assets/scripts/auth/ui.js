@@ -31,11 +31,12 @@ const signInFailure = () => {
 }
 
 const changePasswordSuccess = (data) => {
-  console.log('Change Password Success!')
+  // console.log('Change Password Success!')
   console.log(data)
-  $('.change-password-message-board').text('Successfully changed password.')
+  $('.change-password-message-board').text('')
   // $('#change-password-modal').modal('hide')
   $('.change-password').val('')
+  $('#change-password-modal').modal('hide')
 }
 
 const changePasswordFailure = () => {
