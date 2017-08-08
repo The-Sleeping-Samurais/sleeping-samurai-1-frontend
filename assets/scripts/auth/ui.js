@@ -38,6 +38,8 @@ const changePasswordSuccess = (data) => {
 }
 
 const changePasswordFailure = () => {
+  $('.change-password-message-board').text('Incorrect credentials.')
+  $('.change-password').val('')
 }
 
 const signOutSuccess = () => {
