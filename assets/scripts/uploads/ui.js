@@ -1,15 +1,19 @@
 'use strict'
 const store = require('../store')
 const browseTemplate = require('../templates/browse-uploads.handlebars')
-// const editableTemplate = require('../templates/show-uploads.handlebars')
+const editableTemplate = require('../templates/show-uploads.handlebars')
 const imageTemplate = require('../templates/show-images.handlebars')
 
 const onGetUploadsSuccess = function (data) {
+  let imageArray = filterDataForImg(data.uploads)
   console.log('success data is:', data)
-  const browseHtml = browseTemplate({ uploads: data.uploads })
-  $('#vault').append(browseHtml)
+  const uploadsHtml = editableTemplate({ uploads: data.uploads })
+  $('#vault').append(uploadsHtml)
   $('#vault').show(1000)
-  $('.buttons').hide()
+  const imageHtml = imageTemplate({ uploads: imageArray })
+  $('#image-board').append(imageHtml)
+  // $('#vault').show(1000)
+  $('.buttons').show()
 }
 
 // const onGetMyUploadsSuccess = function (data) {
@@ -22,13 +26,11 @@ const onGetUploadsSuccess = function (data) {
 const onGetMyUploadsSuccess = function (data) {
   let imageArray = filterDataForImg(data.uploads)
   console.log('success data is:', data)
-  // filter(data) = dataImg
-  // filter(data) = dataFile
-  // let imageArray =
-  // let fileArray =
-  console.log(imageArray)
-  const uploadsHtml = imageTemplate({ uploads: imageArray })
-  $('#image-board').append(uploadsHtml)
+  const uploadsHtml = editableTemplate({ uploads: data.uploads })
+  $('#vault').append(uploadsHtml)
+  $('#vault').show(1000)
+  const imageHtml = imageTemplate({ uploads: imageArray })
+  $('#image-board').append(imageHtml)
   // $('#vault').show(1000)
   $('.buttons').show()
 }
@@ -78,6 +80,7 @@ const filterDataForImg = function (dataArray) {
     // if (dataArray[i].url === 'png') {
     // }
 }
+
 module.exports = {
 
   error,
