@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>ExoBase</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags unless you know what you are doing -->
@@ -46,7 +46,7 @@
   </div>
 </div>
 
-<div class="container">
+<div id="mainContainer" class="container">
   <div class="row">
     <!-- <div class="col-md-1"> -->
         <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
@@ -54,7 +54,7 @@
           <ul class="sidebar-nav">
               <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
               <li class="sidebar-brand">
-                  <a href="#top" onclick=$("#menu-close").click();>App Title</a>
+                  <a href="#top" onclick=$("#menu-close").click();>ExoBase</a>
               </li>
               <li>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-upload-modal" id="createUploadButton">
@@ -115,7 +115,7 @@
                 </th>
                 <th data-field="createDate"
                     data-sortable="true">
-                        Date
+                        Date and Time Created
                 </th>
                 <th data-field="updateDate"
                     data-sortable="true">
@@ -177,21 +177,21 @@
           <fieldset>
             <label>
               Title
-              <input type="text" name="file[name]" class="create-upload">
-            </label>
+            </label><br>
+            <input type="text" name="file[name]" class="create-upload"><br>
             <label>
               Description
-              <textarea type="text" name="file[description]" class="create-upload">
-              </textarea>
-            </label>
+            </label><br>
+            <textarea type="text" name="file[description]" class="create-upload">
+            </textarea><br>
             <label>
               Tag
-              <input type="text" name="file[tag]" class="create-upload">
-            </label>
+            </label><br>
+            <input type="text" name="file[tag]" class="create-upload"><br>
             <label>
-              Image
-              <input type="file" name="file[load]" class="create-upload">
-            </label>
+              File
+            </label><br>
+            <input type="file" name="file[load]" class="create-upload"><br>
             <button type="submit" name="submit" value="Upload" class="btn btn-primary">Upload</button>
           </fieldset>
         </form>
@@ -218,7 +218,7 @@
           <input id="fileDes" class="edit-upload" type="text" name="upload[description]" >
           <br><label>Tag</label><br>
           <input id="fileTag" class="edit-upload" type="text" name="upload[tag]" >
-          <button id="updateSubmit" type="submit" class="btn btn-default" value="edit" name="submit">Edit Upload</button>
+          <br><button id="updateSubmit" type="submit" class="btn btn-default" value="edit" name="submit">Edit Upload</button>
         </form>
       </div>
     </div>
@@ -236,8 +236,8 @@
       <div class="modal-body">
         <h2 class="sign-up-message-board"></h2>
         <form id="sign-up">
-          <input class="sign-up" name="credentials[email]" type="text" placeholder="Your E-Mail">
-          <input class="sign-up"  name="credentials[password]" type="password" placeholder="Password">
+          <input class="sign-up" name="credentials[email]" type="text" placeholder="Your E-Mail"><br>
+          <input class="sign-up"  name="credentials[password]" type="password" placeholder="Password"><br>
           <button type="submit" class="btn btn-default" value="Sign Up" name="submit">Sign Up</button>
         </form>
       </div>
@@ -276,8 +276,8 @@
       <div class="modal-body">
         <h2 class="sign-in-message-board"></h2>
         <form id="sign-in">
-          <input class="sign-in" name="credentials[email]" type="text" value='jeff@jeff' placeholder="Your E-Mail">
-          <input class="sign-in"  name="credentials[password]" type="password" value="jeff" placeholder="Password">
+          <input class="sign-in" name="credentials[email]" type="text" placeholder="Your E-Mail"><br>
+          <input class="sign-in"  name="credentials[password]" type="password" placeholder="Password"><br>
           <button type="submit" class="btn btn-default" value="Sign In" name="submit">Sign In</button>
         </form>
       </div>

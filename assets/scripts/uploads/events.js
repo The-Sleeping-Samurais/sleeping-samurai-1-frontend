@@ -4,7 +4,6 @@ const uploadUi = require('./ui')
 
 const createUploadMultiPart = function (event) {
   event.preventDefault()
-  console.log('it did something in multipart')
   const data = new FormData(event.target)
   uploadApi.createMulti(data)
     .then(() => {
@@ -36,9 +35,6 @@ const onGetMyUploads = function (event) {
 }
 
 const onDeleteUpload = function (event) {
-  console.log('this is: ', this)
-  console.log('this.dataset is: ', this.dataset)
-  console.log('this.dataset.id is: ', this.dataset.id)
   uploadApi.deleteUpload(this.dataset.id)
     .then(() => {
       onGetMyUploads()

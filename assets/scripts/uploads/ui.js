@@ -6,18 +6,16 @@ const imageTemplate = require('../templates/show-images.handlebars')
 
 const onGetUploadsSuccess = function (data) {
   let imageArray = filterDataForImg(data.uploads)
-  console.log('success data is:', data)
-  const uploadsHtml = editableTemplate({ uploads: data.uploads })
+  const uploadsHtml = browseTemplate({ uploads: data.uploads })
   $('#vault').append(uploadsHtml)
   $('#vault').show(1000)
   const imageHtml = imageTemplate({ uploads: imageArray })
   $('#image-board').append(imageHtml)
   // $('#vault').show(1000)
-  $('.buttons').show()
+  $('.buttons').hide()
 }
 
 // const onGetMyUploadsSuccess = function (data) {
-//   console.log('success data is:', data)
 //   const uploadsHtml = editableTemplate({ uploads: data.uploads })
 //   $('#vault').append(uploadsHtml)
 //   $('#vault').show(1000)
@@ -25,7 +23,6 @@ const onGetUploadsSuccess = function (data) {
 // }
 const onGetMyUploadsSuccess = function (data) {
   let imageArray = filterDataForImg(data.uploads)
-  console.log('success data is:', data)
   const uploadsHtml = editableTemplate({ uploads: data.uploads })
   $('#vault').append(uploadsHtml)
   $('#vault').show(1000)
@@ -36,9 +33,6 @@ const onGetMyUploadsSuccess = function (data) {
 }
 
 const deleteFailure = function (data, error) {
-  console.log('delete data is:', data)
-  console.log('store.user.token is:', store.user.token)
-  console.error('error is:', error)
   // const uploadsHtml = uploadsTemplate({ uploads: data.uploads })
   // $('#vault').append(uploadsHtml)
 }
@@ -46,11 +40,10 @@ const deleteFailure = function (data, error) {
 const createSuccess = function (data) {
   $('.create-message-board').text('Successfully uploaded file.')
   $('.create-upload').val('')
-  console.log('success data is:', data)
 }
 
 const createFailure = function (data, error) {
-  $('.create-upload-message-board').text('Error uploading.')
+  $('.create-message-board').text('Error uploading.')
 }
 
 const updateSuccess = function (data) {
@@ -63,7 +56,6 @@ const updateFailure = function (data, error) {
 }
 
 const error = function (error) {
-  console.log('error is:', error)
 }
 
 // This is Kai's genius

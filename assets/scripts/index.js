@@ -37,6 +37,10 @@ $(() => {
   $('#showMyUploadsButton').on('click', function () {
     $('#messageBoard').text('My Uploads')
   })
+  $('#messageBoard').hide()
+  $('#imageButton').hide()
+  $('#fileButton').hide()
+  $('#mainContainer').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file

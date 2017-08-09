@@ -5,6 +5,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   background-image: url('./hugo-kemmel-210791.jpg');
   background-size: cover;
   height: 100vh;
+  margin: 0;
 
 }
 
@@ -21,6 +22,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   transform: translate(-50%, -50%);
   margin: 0 auto;
 }
+
+.buttons
 
 #fileId {
   display: none;
