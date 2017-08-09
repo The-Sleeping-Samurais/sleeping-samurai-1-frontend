@@ -1,7 +1,8 @@
 'use strict'
 const store = require('../store')
 const browseTemplate = require('../templates/browse-uploads.handlebars')
-const editableTemplate = require('../templates/show-uploads.handlebars')
+// const editableTemplate = require('../templates/show-uploads.handlebars')
+const imageTemplate = require('../templates/show-images.handlebars')
 
 const onGetUploadsSuccess = function (data) {
   console.log('success data is:', data)
@@ -11,11 +12,24 @@ const onGetUploadsSuccess = function (data) {
   $('.buttons').hide()
 }
 
+// const onGetMyUploadsSuccess = function (data) {
+//   console.log('success data is:', data)
+//   const uploadsHtml = editableTemplate({ uploads: data.uploads })
+//   $('#vault').append(uploadsHtml)
+//   $('#vault').show(1000)
+//   $('.buttons').show()
+// }
 const onGetMyUploadsSuccess = function (data) {
+  let imageArray = filterDataForImg(data.uploads)
   console.log('success data is:', data)
-  const uploadsHtml = editableTemplate({ uploads: data.uploads })
-  $('#vault').append(uploadsHtml)
-  $('#vault').show(1000)
+  // filter(data) = dataImg
+  // filter(data) = dataFile
+  // let imageArray =
+  // let fileArray =
+  console.log(imageArray)
+  const uploadsHtml = imageTemplate({ uploads: imageArray })
+  $('#image-board').append(uploadsHtml)
+  // $('#vault').show(1000)
   $('.buttons').show()
 }
 
@@ -50,6 +64,20 @@ const error = function (error) {
   console.log('error is:', error)
 }
 
+// This is Kai's genius
+const filterDataForImg = function (dataArray) {
+  let filteredData = []
+  for (let i = 0; i < dataArray.length; i++) {
+    let url = dataArray[i].url
+    let urlEnd = url.substr(url.length -3)
+    if (urlEnd === 'png' || urlEnd === 'peg' || urlEnd === 'jpg' || urlEnd === 'svg') {
+      filteredData.push(dataArray[i])
+    }
+  }
+  return filteredData
+    // if (dataArray[i].url === 'png') {
+    // }
+}
 module.exports = {
 
   error,

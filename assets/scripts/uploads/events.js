@@ -76,6 +76,7 @@ const addHandlers = function () {
   $('#multipart-form-data').on('submit', createUploadMultiPart)
   $('#showUploadsButton').on('click', onGetUploads)
   $('#vault').on('click', '.remove-button', onDeleteUpload)
+  $('#image-board').on('click', '.remove-button', onDeleteUpload)
   $('#showMyUploadsButton').on('click', onGetMyUploads)
   $('#edit-upload-form').on('submit', onUpdateUpload)
   $('#vault').on('click', '.update-button', openUpdateModal)

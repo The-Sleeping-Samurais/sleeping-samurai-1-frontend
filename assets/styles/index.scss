@@ -29,6 +29,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 }
 #sidebar-wrapper {
+    z-index: 1;
     position: fixed;
     top: 0;
     left: 0;
@@ -81,4 +82,47 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .sidebar-nav > .sidebar-brand a:hover {
     color: #fff;
     background: none;
+}
+.images {
+  background-size: cover;
+  background-position: center;
+  width: 24%;
+  height: 500px;
+  margin: 10px 0;
+  padding: 0;
+  position: relative
+}
+
+.images .hidden-text {
+position:relative;
+visibility: hidden;
+text-align: center;
+padding: 10%;
+color: white;
+font-size: 20px;
+}
+
+.images .hidden-buttons {
+width:89%;
+height: 20px;
+position:relative;
+visibility: hidden;
+align-items: center;
+padding: 10%;
+margin: 1px 5%;
+color: white;
+}
+
+.images:hover > .overlay {
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:#000;
+    opacity:0.5;
+}
+.images:hover .hidden-text {
+visibility: visible;
+}
+.images:hover .hidden-buttons {
+visibility: visible;
 }
