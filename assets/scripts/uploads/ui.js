@@ -28,6 +28,13 @@ const onGetMyUploadsSuccess = function (data) {
   $('#vault').show(1000)
   const imageHtml = imageTemplate({ uploads: imageArray })
   $('#image-board').append(imageHtml)
+  if (imageArray.length === 0 && data.uploads.length === 0) {
+    $('#secondMessageBoard').text('You have no files or images')
+  } else if (imageArray.length === 0) {
+    $('#secondMessageBoard').text('No images available')
+  } else {
+    $('#secondMessageBoard').text('')
+  }
   // $('#vault').show(1000)
   $('.buttons').show()
 }
