@@ -41,6 +41,9 @@ $(() => {
   $('#imageButton').hide()
   $('#fileButton').hide()
   $('#mainContainer').hide()
+  $('#showUploadsButton').on('click', function () {
+    $('#secondMessageBoard').text('')
+  })
 })
 
 // use require with a reference to bundle the file and use it in this file
