@@ -16,7 +16,7 @@
 <body>
 
   <!-- NAV BAR -->
-  <nav class="navbar navbar-default" id="top-nav">
+  <nav class="navbar navbar-default fixed-top" id="top-nav">
     <div class="navbar-header">
       <a class="navbar-brand"></a>
     </div>
@@ -28,9 +28,6 @@
         <button type="button" class="btn btn-primary" id="sign-out">
           Sign Out
         </button>
-
-
-
       </ul>
     </div>
   </nav>
@@ -66,12 +63,12 @@
               </li>
               <li>
                 <button id="showUploadsButton" type="button" class="btn btn-primary">
-                Show Uploads
+                Browse All Uploads
               </button>
               </li>
               <li>
                 <button id="showMyUploadsButton" type="button" class="btn btn-primary">
-                Show My Uploads
+                My Uploads
               </button>
             </li>
           </ul>
@@ -79,6 +76,7 @@
     <!-- </div> -->
     <div class="col-md-10 col-md-offset-2">
       <div class="header">
+        <h1 id="messageBoard">My Uploads</h1>
         <button id="imageButton" type="button" class="btn btn-primary">
         Images
       </button>

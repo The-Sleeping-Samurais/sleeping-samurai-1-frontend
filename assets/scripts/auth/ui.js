@@ -63,6 +63,7 @@ const signOutSuccess = () => {
   $('.content').empty()
   $('#top-nav').hide(1000)
   $('#sidebar-wrapper').hide()
+  $('#messageBoard').text('My Uploads')
 }
 
 const signOutFailure = () => {

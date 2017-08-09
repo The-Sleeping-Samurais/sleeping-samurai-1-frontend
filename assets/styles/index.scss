@@ -8,9 +8,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 }
 
-.navbar {
-  margin-bottom: 0;
-}
+// .navbar {
+//   top: 0;
+//   z-index: 1;
+//   position: fixed;
+// }
 .title-landing {
   color: white;
   position: absolute;
@@ -29,7 +31,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 }
 #sidebar-wrapper {
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     top: 0;
     left: 0;
