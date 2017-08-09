@@ -3,13 +3,11 @@ const store = require('../store')
 const uploadActions = require('../uploads/events.js')
 
 const signUpFailure = () => {
-  $('.sign-up-message-board').text('Incorrect Credentials')
+  $('.sign-up-message-board').text('Problem signing up')
 }
 
 const signInSuccess = (data) => {
   store.user = data.user
-  console.log('Sign In Success!')
-  console.log(data.user)
   $('#sign-up-modal').modal('hide')
   $('.sign-up').val('')
   $('#sign-in-modal').modal('hide')
@@ -25,7 +23,13 @@ const signInSuccess = (data) => {
   $('.jumbotron').hide(1000)
   // $('#mySidenav').show(1000)
   $('#top-nav').show(1000)
-
+  $('#sidebar-wrapper').show(1000)
+  $('.sign-up-message-board').text('')
+  $('.sign-in-message-board').text('')
+  $('#messageBoard').show()
+  $('#imageButton').show()
+  $('#fileButton').show()
+  $('#mainContainer').show()
   uploadActions.onGetMyUploads()
 }
 
@@ -35,10 +39,7 @@ const signInFailure = () => {
 }
 
 const changePasswordSuccess = (data) => {
-  // console.log('Change Password Success!')
-  console.log(data)
   $('.change-password-message-board').text('')
-  // $('#change-password-modal').modal('hide')
   $('.change-password').val('')
   $('#change-password-modal').modal('hide')
 }
@@ -49,7 +50,6 @@ const changePasswordFailure = () => {
 }
 
 const signOutSuccess = () => {
-  console.log('signout success')
   $('#signUpButton').show(1000)
   $('#signInButton').show(1000)
   $('#sign-out').hide(1000)
@@ -62,6 +62,14 @@ const signOutSuccess = () => {
   $('#vault').hide(1000)
   $('.content').empty()
   $('#top-nav').hide(1000)
+  $('#sidebar-wrapper').hide()
+  $('#messageBoard').text('My Uploads')
+  $('.create-message-board').text('')
+  $('.create-upload').val('')
+  $('#messageBoard').hide()
+  $('#imageButton').hide()
+  $('#fileButton').hide()
+  $('#mainContainer').hide()
 }
 
 const signOutFailure = () => {

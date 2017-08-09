@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Example</title>
+  <title>ExoBase</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Do not add `link` tags unless you know what you are doing -->
@@ -16,28 +16,18 @@
 <body>
 
   <!-- NAV BAR -->
-  <nav class="navbar navbar-default" id="top-nav">
+  <nav class="navbar navbar-default fixed-top" id="top-nav">
     <div class="navbar-header">
       <a class="navbar-brand"></a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-upload-modal" id="createUploadButton">
-          Upload File
-        </button>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password-modal" id="changePasswordButton">
           Change Password
         </button>
         <button type="button" class="btn btn-primary" id="sign-out">
           Sign Out
         </button>
-
-      <button id="showUploadsButton" type="button" class="btn btn-primary">
-      Show Uploads
-    </button>
-    <button id="showMyUploadsButton" type="button" class="btn btn-primary">
-    Show My Uploads
-  </button>
       </ul>
     </div>
   </nav>
@@ -45,20 +35,103 @@
 
 <div class="jumbotron">
   <div class="container title-landing">
-
-<h1>Share Your Files!</h1>
-<br>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal" id="signUpButton">
+    <h1>Share Your Files!</h1>
+    <br>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal" id="signUpButton">
           Sign Up
         </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal" id="signInButton">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal" id="signInButton">
         Sign In
       </button>
+  </div>
+</div>
+
+<div id="mainContainer" class="container">
+  <div class="row">
+    <!-- <div class="col-md-1"> -->
+        <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+      <nav id="sidebar-wrapper">
+          <ul class="sidebar-nav">
+              <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+              <li class="sidebar-brand">
+                  <a href="#top" onclick=$("#menu-close").click();>ExoBase</a>
+              </li>
+              <li>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-upload-modal" id="createUploadButton">
+                  Upload File
+                </button>
+              </li>
+              <li>
+                <button id="showUploadsButton" type="button" class="btn btn-primary">
+                Browse All Uploads
+              </button>
+              </li>
+              <li>
+                <button id="showMyUploadsButton" type="button" class="btn btn-primary">
+                My Uploads
+              </button>
+            </li>
+          </ul>
+    </nav>
+    <!-- </div> -->
+    <div class="col-md-10 col-md-offset-2">
+      <div class="header">
+        <h1 id="messageBoard">My Uploads</h1>
+        <button id="imageButton" type="button" class="btn btn-primary">
+        Images
+      </button>
+      <button id="fileButton" type="button" class="btn btn-primary">
+      Files
+      </button>
+      </div>
+      <div id="image-board" class="image-board content">
+      </div>
+      <table id="vault"
+               class="table"
+               data-toggle="table"
+               data-sort-name="name"
+               data-sort-order="desc">
+            <thead>
+            <tr role="row">
+                <th data-field="name"
+                    data-sortable="true">
+                        Name
+                </th>
+                <th data-field="description"
+                    data-sortable="true">
+                        Description
+                </th>
+                <th data-field="Tag"
+                    data-sortable="true">
+                        Tag
+                </th>
+                <th data-field="Size"
+                    data-sortable="true">
+                        File Size
+                </th>
+                <th data-field="URL"
+                    data-sortable="true">
+                        URL
+                </th>
+                <th data-field="createDate"
+                    data-sortable="true">
+                        Date and Time Created
+                </th>
+                <th data-field="updateDate"
+                    data-sortable="true">
+                        Last Updated
+                </th>
+                <th data-field="edit-delete"
+                    data-sortable="false" class="buttons">
+                        Edit/Delete
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </div>
   </div>
-
-
-
 </div>
 
 <!-- <div class="upload">
@@ -86,51 +159,6 @@
   </form>
 </div> -->
 
-<table id="vault"
-         class="table"
-         data-toggle="table"
-         data-sort-name="name"
-         data-sort-order="desc">
-      <thead>
-      <tr role="row">
-          <th data-field="name"
-              data-sortable="true">
-                  Name
-          </th>
-          <th data-field="description"
-              data-sortable="true">
-                  Description
-          </th>
-          <th data-field="Tag"
-              data-sortable="true">
-                  Tag
-          </th>
-          <th data-field="Size"
-              data-sortable="true">
-                  File Size
-          </th>
-          <th data-field="URL"
-              data-sortable="true">
-                  URL
-          </th>
-          <th data-field="createDate"
-              data-sortable="true">
-                  Date
-          </th>
-          <th data-field="updateDate"
-              data-sortable="true">
-                  Last Updated
-          </th>
-          <th data-field="edit-delete"
-              data-sortable="false" class="buttons">
-                  Edit/Delete
-          </th>
-      </tr>
-      </thead>
-      <tbody>
-      </tbody>
-  </table>
-
 
 <!-- ALLLLLLL MODAL BODIES BELOW HERE -->
 
@@ -149,21 +177,21 @@
           <fieldset>
             <label>
               Title
-              <input type="text" name="file[name]" class="create-upload">
-            </label>
+            </label><br>
+            <input type="text" name="file[name]" class="create-upload"><br>
             <label>
               Description
-              <textarea type="text" name="file[description]" class="create-upload">
-              </textarea>
-            </label>
+            </label><br>
+            <textarea type="text" name="file[description]" class="create-upload">
+            </textarea><br>
             <label>
               Tag
-              <input type="text" name="file[tag]" class="create-upload">
-            </label>
+            </label><br>
+            <input type="text" name="file[tag]" class="create-upload"><br>
             <label>
-              Image
-              <input type="file" name="file[load]" class="create-upload">
-            </label>
+              File
+            </label><br>
+            <input type="file" name="file[load]" class="create-upload"><br>
             <button type="submit" name="submit" value="Upload" class="btn btn-primary">Upload</button>
           </fieldset>
         </form>
@@ -190,7 +218,7 @@
           <input id="fileDes" class="edit-upload" type="text" name="upload[description]" >
           <br><label>Tag</label><br>
           <input id="fileTag" class="edit-upload" type="text" name="upload[tag]" >
-          <button id="updateSubmit" type="submit" class="btn btn-default" value="edit" name="submit">Edit Upload</button>
+          <br><button id="updateSubmit" type="submit" class="btn btn-default" value="edit" name="submit">Edit Upload</button>
         </form>
       </div>
     </div>
@@ -208,8 +236,8 @@
       <div class="modal-body">
         <h2 class="sign-up-message-board"></h2>
         <form id="sign-up">
-          <input class="sign-up" name="credentials[email]" type="text" placeholder="Your E-Mail">
-          <input class="sign-up"  name="credentials[password]" type="password" placeholder="Password">
+          <input class="sign-up" name="credentials[email]" type="text" placeholder="Your E-Mail"><br>
+          <input class="sign-up"  name="credentials[password]" type="password" placeholder="Password"><br>
           <button type="submit" class="btn btn-default" value="Sign Up" name="submit">Sign Up</button>
         </form>
       </div>
@@ -248,8 +276,8 @@
       <div class="modal-body">
         <h2 class="sign-in-message-board"></h2>
         <form id="sign-in">
-          <input class="sign-in" name="credentials[email]" type="text" value='jeff@jeff' placeholder="Your E-Mail">
-          <input class="sign-in"  name="credentials[password]" type="password" value="jeff" placeholder="Password">
+          <input class="sign-in" name="credentials[email]" type="text" placeholder="Your E-Mail"><br>
+          <input class="sign-in"  name="credentials[password]" type="password" placeholder="Password"><br>
           <button type="submit" class="btn btn-default" value="Sign In" name="submit">Sign In</button>
         </form>
       </div>
