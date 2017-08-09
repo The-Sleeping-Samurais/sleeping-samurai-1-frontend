@@ -17,6 +17,30 @@ $(() => {
   $('#createUploadButton').hide()
   // $('.upload').hide()
   $('#vault').hide()
+  $('#top-nav').hide()
+  $('#sidebar-wrapper').hide()
+  $('#imageButton').on('click', function () {
+    $('#vault').hide()
+    $('#image-board').show()
+    // $('#imageButton').toggleClass('btn-primary')
+    // $('#fileButton').toggleClass('btn-secondary')
+  })
+  $('#fileButton').on('click', function () {
+    $('#image-board').hide()
+    $('#vault').show()
+    // $('#fileButton').toggleClass('btn-primary')
+    // $('#imageButton').toggleClass('btn-secondary')
+  })
+  $('#showUploadsButton').on('click', function () {
+    $('#messageBoard').text('All Uploads')
+  })
+  $('#showMyUploadsButton').on('click', function () {
+    $('#messageBoard').text('My Uploads')
+  })
+  $('#messageBoard').hide()
+  $('#imageButton').hide()
+  $('#fileButton').hide()
+  $('#mainContainer').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file
