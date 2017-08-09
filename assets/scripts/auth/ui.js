@@ -25,7 +25,7 @@ const signInSuccess = (data) => {
   $('.jumbotron').hide(1000)
   // $('#mySidenav').show(1000)
   $('#top-nav').show(1000)
-
+  $('#sidebar-wrapper').show(1000)
   uploadActions.onGetMyUploads()
 }
 
@@ -62,6 +62,7 @@ const signOutSuccess = () => {
   $('#vault').hide(1000)
   $('.content').empty()
   $('#top-nav').hide(1000)
+  $('#sidebar-wrapper').hide()
 }
 
 const signOutFailure = () => {

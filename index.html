@@ -22,9 +22,6 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-upload-modal" id="createUploadButton">
-          Upload File
-        </button>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password-modal" id="changePasswordButton">
           Change Password
         </button>
@@ -32,12 +29,8 @@
           Sign Out
         </button>
 
-      <button id="showUploadsButton" type="button" class="btn btn-primary">
-      Show Uploads
-    </button>
-    <button id="showMyUploadsButton" type="button" class="btn btn-primary">
-    Show My Uploads
-  </button>
+
+
       </ul>
     </div>
   </nav>
@@ -45,20 +38,92 @@
 
 <div class="jumbotron">
   <div class="container title-landing">
-
-<h1>Share Your Files!</h1>
-<br>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal" id="signUpButton">
+    <h1>Share Your Files!</h1>
+    <br>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal" id="signUpButton">
           Sign Up
         </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal" id="signInButton">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal" id="signInButton">
         Sign In
       </button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <!-- <div class="col-md-1"> -->
+        <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
+      <nav id="sidebar-wrapper">
+          <ul class="sidebar-nav">
+              <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+              <li class="sidebar-brand">
+                  <a href="#top" onclick=$("#menu-close").click();>App Title</a>
+              </li>
+              <li>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-upload-modal" id="createUploadButton">
+                  Upload File
+                </button>
+              </li>
+              <li>
+                <button id="showUploadsButton" type="button" class="btn btn-primary">
+                Show Uploads
+              </button>
+              </li>
+              <li>
+                <button id="showMyUploadsButton" type="button" class="btn btn-primary">
+                Show My Uploads
+              </button>
+            </li>
+          </ul>
+    </nav>
+    <!-- </div> -->
+    <div class="col-md-12">
+      <table id="vault"
+               class="table"
+               data-toggle="table"
+               data-sort-name="name"
+               data-sort-order="desc">
+            <thead>
+            <tr role="row">
+                <th data-field="name"
+                    data-sortable="true">
+                        Name
+                </th>
+                <th data-field="description"
+                    data-sortable="true">
+                        Description
+                </th>
+                <th data-field="Tag"
+                    data-sortable="true">
+                        Tag
+                </th>
+                <th data-field="Size"
+                    data-sortable="true">
+                        File Size
+                </th>
+                <th data-field="URL"
+                    data-sortable="true">
+                        URL
+                </th>
+                <th data-field="createDate"
+                    data-sortable="true">
+                        Date
+                </th>
+                <th data-field="updateDate"
+                    data-sortable="true">
+                        Last Updated
+                </th>
+                <th data-field="edit-delete"
+                    data-sortable="false" class="buttons">
+                        Edit/Delete
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </div>
   </div>
-
-
-
 </div>
 
 <!-- <div class="upload">
@@ -85,51 +150,6 @@
     </fieldset>
   </form>
 </div> -->
-
-<table id="vault"
-         class="table"
-         data-toggle="table"
-         data-sort-name="name"
-         data-sort-order="desc">
-      <thead>
-      <tr role="row">
-          <th data-field="name"
-              data-sortable="true">
-                  Name
-          </th>
-          <th data-field="description"
-              data-sortable="true">
-                  Description
-          </th>
-          <th data-field="Tag"
-              data-sortable="true">
-                  Tag
-          </th>
-          <th data-field="Size"
-              data-sortable="true">
-                  File Size
-          </th>
-          <th data-field="URL"
-              data-sortable="true">
-                  URL
-          </th>
-          <th data-field="createDate"
-              data-sortable="true">
-                  Date
-          </th>
-          <th data-field="updateDate"
-              data-sortable="true">
-                  Last Updated
-          </th>
-          <th data-field="edit-delete"
-              data-sortable="false" class="buttons">
-                  Edit/Delete
-          </th>
-      </tr>
-      </thead>
-      <tbody>
-      </tbody>
-  </table>
 
 
 <!-- ALLLLLLL MODAL BODIES BELOW HERE -->
