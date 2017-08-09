@@ -15,42 +15,52 @@
 
 <body>
 
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+  </div>
   <!-- NAV BAR -->
+  <div id="main">
+
   <nav class="navbar navbar-default">
-    <div class="navbar-header">
-      <a class="navbar-brand">The Vault</a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-upload-modal" id="createUploadButton">
-          Upload File
-        </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password-modal" id="changePasswordButton">
-          Change Password
-        </button>
-        <button type="button" class="btn btn-primary" id="sign-out">
-          Sign Out
-        </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal" id="signUpButton">
-          Sign Up
-        </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal" id="signInButton">
-        Sign In
-      </button>
-      <button id="showUploadsButton" type="button" class="btn btn-primary">
-      Show Uploads
-    </button>
-    <button id="showMyUploadsButton" type="button" class="btn btn-primary">
-    Show My Uploads
-  </button>
-      </ul>
-    </div>
+
+
   </nav>
   <!-- END NAV BAR -->
 
 <div class="jumbotron">
 </div>
 
+<div id="mySidenav" class="sidenav">
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+      <a> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-upload-modal" id="createUploadButton">
+        Upload File
+          </button></a>
+      <a><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password-modal" id="changePasswordButton">
+        Change Password
+         </button></a>
+    <a><button type="button" class="btn btn-primary" id="sign-out">
+        Sign Out
+       </button></a>
+    <a><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-up-modal" id="signUpButton">
+        Sign Up
+       </button></a>
+    <a><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sign-in-modal" id="signInButton">
+      Sign In
+       </button>
+    <a><button id="showUploadsButton" type="button" class="btn btn-primary">
+    Show Uploads
+       </button>
+  <a><button id="showMyUploadsButton" type="button" class="btn btn-primary">
+  Show My Uploads
+    </button></a>
+    </ul>
+  </div>
+</div>
 <!-- <div class="upload">
   <form id="multipart-form-data" enctype="multipart/form-data">
     <fieldset>
@@ -75,7 +85,7 @@
     </fieldset>
   </form>
 </div> -->
-
+<div class="wrapper1">
 <table id="vault"
          class="table"
          data-toggle="table"
@@ -120,8 +130,8 @@
       <tbody>
       </tbody>
   </table>
-
-
+</div>
+</div>
 <!-- ALLLLLLL MODAL BODIES BELOW HERE -->
 
 <!-- MODAL FOR CREATE UPLOADS -->
