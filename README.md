@@ -103,7 +103,16 @@ Inner Page: https://wireframe.cc/JXEUoU
 
 ## Major Hurdles
 
-- to be listed
+-  We ran into a problem when we were updating an upload's information. The
+   issue was that our data was not formatted correctly for ab AJAX request update.
+   We posted the issue here. https://github.com/ga-wdi-boston/team-project/issues/378
+
+-  When we created an upload, we were getting back a link to download the file,
+   we uploaded. We wanted to get back a link that leads a user to the site where
+   the file was hosted. We found that a team had this problem and posted an issue.
+   We used their issue helpful and solved the problem. You can find further information
+   here. https://github.com/ga-wdi-boston/team-project/issues/378
+
 
 ## Unsolved Problems
 
