@@ -23,6 +23,9 @@ const signInSuccess = (data) => {
   $('#signUpButton').hide(1000)
   $('#signInButton').hide(1000)
   $('.jumbotron').hide(1000)
+  // $('#mySidenav').show(1000)
+  $('#top-nav').show(1000)
+
   uploadActions.onGetMyUploads()
 }
 
@@ -58,6 +61,7 @@ const signOutSuccess = () => {
   $('.upload').hide(1000)
   $('#vault').hide(1000)
   $('.content').empty()
+  $('#top-nav').hide(1000)
 }
 
 const signOutFailure = () => {

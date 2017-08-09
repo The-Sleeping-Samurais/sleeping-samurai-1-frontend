@@ -17,6 +17,7 @@ $(() => {
   $('#createUploadButton').hide()
   // $('.upload').hide()
   $('#vault').hide()
+  $('#top-nav').hide()
 })
 
 // use require with a reference to bundle the file and use it in this file

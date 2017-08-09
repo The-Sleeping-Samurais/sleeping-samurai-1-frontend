@@ -11,6 +11,13 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .navbar {
   margin-bottom: 0;
 }
+.title-landing {
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  margin: 0 auto;
+}
 
 #fileId {
   display: none;
