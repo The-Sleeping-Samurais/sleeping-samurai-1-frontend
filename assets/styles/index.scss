@@ -2,7 +2,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 .jumbotron {
-  background-image: url('./Bank_Vault_3D_Wallpaper-HD.jpg');
+  background-image: url('./hugo-kemmel-210791.jpg');
   background-size: cover;
   height: 100vh;
 
@@ -12,6 +12,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin-bottom: 0;
 }
 .title-landing {
+  color: white;
   position: absolute;
   top: 50%;
   left: 65%;
@@ -21,4 +22,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 #fileId {
   display: none;
+}
+
+#signUpButton, #signInButton {
+  margin: 20px;
+
 }
