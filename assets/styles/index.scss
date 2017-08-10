@@ -27,6 +27,9 @@ body {
   background-attachment: fixed;
 }
 
+.mainContainer {
+  color: white;
+}
 // .title-landing {
 //   color: white;
 //   position: absolute;
@@ -176,4 +179,17 @@ hr {
 
 .images:hover .hidden-buttons {
   visibility: visible;
+}
+
+// MODAL STYLES
+.modal-content {
+  border: thin solid white;
+}
+.modal-header {
+  background-color: #060C2E;
+  color: white;
+}
+.modal-body {
+  background-color: #363583;
+  color: white;
 }
