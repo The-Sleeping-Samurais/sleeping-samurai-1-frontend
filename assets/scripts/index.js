@@ -4,7 +4,7 @@ const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const authEvents = require('./auth/events.js')
 const uploadEvents = require('./uploads/events')
-const dt = require('datatables.net')
+// const dt = require('datatables.net')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -22,17 +22,17 @@ $(() => {
   $('#imageButton').on('click', function () {
     $('#vault').hide()
     $('#image-board').show()
-    // $('#imageButton').toggleClass('btn-primary')
-    // $('#fileButton').toggleClass('btn-secondary')
+    $('#imageButton').css("border", "thin solid green")
+    $('#fileButton').css("border", "none")
   })
   $('#fileButton').on('click', function () {
     $('#image-board').hide()
     $('#vault').show()
-    // $('#fileButton').toggleClass('btn-primary')
-    // $('#imageButton').toggleClass('btn-secondary')
+    $('#fileButton').css("border", "thin solid green")
+    $('#imageButton').css("border", "none")
   })
   $('#showUploadsButton').on('click', function () {
-    $('#messageBoard').text('All Uploads')
+    $('#messageBoard').text('Browsing')
   })
   $('#showMyUploadsButton').on('click', function () {
     $('#messageBoard').text('My Uploads')

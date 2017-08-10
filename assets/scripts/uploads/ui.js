@@ -8,24 +8,24 @@ const onGetUploadsSuccess = function (data) {
   let imageArray = filterDataForImg(data.uploads)
   const uploadsHtml = browseTemplate({ uploads: data.uploads })
   $('#vault').append(uploadsHtml)
-  $('#vault').show(1000)
+  $('#vault').show()
   const imageHtml = imageTemplate({ uploads: imageArray })
   $('#image-board').append(imageHtml)
-  // $('#vault').show(1000)
+  // $('#vault').show()
   $('.buttons').hide()
 }
 
 // const onGetMyUploadsSuccess = function (data) {
 //   const uploadsHtml = editableTemplate({ uploads: data.uploads })
 //   $('#vault').append(uploadsHtml)
-//   $('#vault').show(1000)
+//   $('#vault').show()
 //   $('.buttons').show()
 // }
 const onGetMyUploadsSuccess = function (data) {
   let imageArray = filterDataForImg(data.uploads)
   const uploadsHtml = editableTemplate({ uploads: data.uploads })
   $('#vault').append(uploadsHtml)
-  $('#vault').show(1000)
+  $('#vault').show()
   const imageHtml = imageTemplate({ uploads: imageArray })
   $('#image-board').append(imageHtml)
   if (imageArray.length === 0 && data.uploads.length === 0) {
@@ -35,7 +35,7 @@ const onGetMyUploadsSuccess = function (data) {
   } else {
     $('#secondMessageBoard').text('')
   }
-  // $('#vault').show(1000)
+  // $('#vault').show()
   $('.buttons').show()
 }
 
