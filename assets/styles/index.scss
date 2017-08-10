@@ -114,11 +114,7 @@ hr {
   color: green;
 }
 
-// table
-.table {
-  color: white;
-  background-color: rgba(255, 255, 255, .1)
-}
+
 
 // sidebar styling
 
@@ -261,6 +257,15 @@ hr {
 
 .images:hover .hidden-buttons {
   visibility: visible;
+}
+
+// data tables
+.table {
+  color: white;
+  background-color: rgba(255, 255, 255, .1)
+}
+.content:hover {
+  background-color: rgba(255, 255, 255, .3)
 }
 
 // MODAL STYLES
