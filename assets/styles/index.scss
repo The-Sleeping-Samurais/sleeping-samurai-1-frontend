@@ -8,10 +8,26 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 //
 // }
 
+
 body,
 html {
   width: 100%;
   height: 100%;
+}
+
+.ExoBase {
+  font-family: 'Space Mono', monospace;
+}
+
+h1,
+th,
+li {
+  font-family: 'Trirong', serif;
+}
+
+h3,
+p {
+  font-family: 'Work Sans', sans-serif;
 }
 
 body {
