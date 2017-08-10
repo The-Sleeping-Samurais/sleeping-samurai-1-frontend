@@ -54,6 +54,7 @@
               <li class="sidebar-brand">
                   <a href="#top" onclick=$("#menu-close").click();>ExoBase</a>
               </li>
+              <hr>
               <li>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-upload-modal" id="createUploadButton">
                   Upload File
@@ -84,14 +85,28 @@
     <!-- </div> -->
     <div class="col-md-10 col-md-offset-2">
       <div class="header">
-        <h1 id="messageBoard">My Uploads</h1>
+        <ul class="header-list">
+          <li id="messageBoard" class="message-board pull-left">
+            My Uploads
+          </li>
+          <li id="imageButton">
+            Images
+          </li>
+          <li>
+            |
+          </li>
+          <li id="fileButton">
+            Files
+          </li>
+        </ul>
+        <!-- <h1 id="messageBoard">My Uploads</h1> -->
         <h3 id="secondMessageBoard"></h3>
-        <button id="imageButton" type="button" class="btn btn-primary">
+        <!-- <button id="imageButton" type="button" class="btn btn-primary">
         Images
       </button>
       <button id="fileButton" type="button" class="btn btn-primary">
       Files
-      </button>
+      </button> -->
       </div>
       <div id="image-board" class="image-board content">
       </div>

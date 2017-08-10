@@ -79,6 +79,45 @@ hr {
   margin: 10px;
 }
 
+// inner-page
+
+.header >h3{
+  color: green;
+  text-align: center;
+}
+
+.header-list {
+  text-align: center;
+  list-style: none;
+  color: white;
+}
+
+.header-list >li {
+  display: inline-block;
+  font-size: 20px;
+  margin: 0 1%;
+  cursor: pointer;
+}
+
+.message-board {
+  background-color: rgba(6, 12, 46, .8);
+  border: solid thin white;
+  // margin: 1px 2%;
+  padding: 1px 2%;
+}
+
+.header-list >li:hover {
+  color: green;
+}
+
+// table
+.table {
+  color: white;
+  background-color: rgba(255, 255, 255, .1)
+}
+
+// sidebar styling
+
 #sidebar-wrapper {
   z-index: 2;
   position: fixed;
@@ -96,6 +135,7 @@ hr {
   margin: 0;
   padding: 0;
   list-style: none;
+  text-align: center;
 }
 
 .sidebar-nav li {
@@ -122,12 +162,15 @@ hr {
 
 .sidebar-nav > .sidebar-brand {
   height: 55px;
-  font-size: 18px;
+  font-size: 35px;
   line-height: 55px;
+}
+.sidebar-nav > hr {
+  width: 100px;
 }
 
 .sidebar-nav > .sidebar-brand a {
-  color: #999;
+  color: green;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
@@ -135,6 +178,7 @@ hr {
   background: none;
 }
 
+// Image templates
 .images {
   background-size: cover;
   background-position: center;
@@ -182,9 +226,6 @@ hr {
 }
 
 // MODAL STYLES
-.modal-content {
-  border: thin solid white;
-}
 .modal-header {
   background-color: #060C2E;
   color: white;
