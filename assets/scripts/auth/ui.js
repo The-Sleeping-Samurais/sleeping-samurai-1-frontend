@@ -31,6 +31,7 @@ const signInSuccess = (data) => {
   $('#fileButton').show()
   $('#mainContainer').show()
   uploadActions.onGetMyUploads()
+  $('#change-password-message-board').text('')
 }
 
 const signInFailure = () => {
@@ -70,6 +71,7 @@ const signOutSuccess = () => {
   $('#imageButton').hide()
   $('#fileButton').hide()
   $('#mainContainer').hide()
+  $('.change-password-message-board').text('')
 }
 
 const signOutFailure = () => {
