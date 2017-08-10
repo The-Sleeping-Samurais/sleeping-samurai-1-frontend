@@ -22,14 +22,14 @@ $(() => {
   $('#imageButton').on('click', function () {
     $('#vault').hide()
     $('#image-board').show()
-    // $('#imageButton').toggleClass('btn-primary')
-    // $('#fileButton').toggleClass('btn-secondary')
+    $('#imageButton').css("border", "thin solid green")
+    $('#fileButton').css("border", "none")
   })
   $('#fileButton').on('click', function () {
     $('#image-board').hide()
     $('#vault').show()
-    // $('#fileButton').toggleClass('btn-primary')
-    // $('#imageButton').toggleClass('btn-secondary')
+    $('#fileButton').css("border", "thin solid green")
+    $('#imageButton').css("border", "none")
   })
   $('#showUploadsButton').on('click', function () {
     $('#messageBoard').text('Browsing')
