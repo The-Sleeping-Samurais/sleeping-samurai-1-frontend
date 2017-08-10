@@ -54,32 +54,13 @@
               <li class="sidebar-brand">
                   <a href="#top" onclick=$("#menu-close").click();>ExoBase</a>
               </li>
-              <hr>
-              <li>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-upload-modal" id="createUploadButton">
-                  Upload File
-                </button>
-              </li>
-              <li>
-                <button id="showUploadsButton" type="button" class="btn btn-primary">
-                Browse All Uploads
-              </button>
-              </li>
-              <li>
-                <button id="showMyUploadsButton" type="button" class="btn btn-primary">
-                My Uploads
-              </button>
-            </li>
-            <li>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#change-password-modal" id="changePasswordButton">
-              Change Password
-            </button>
-          </li>
-          <li>
-            <button type="button" class="btn btn-primary" id="sign-out">
-              Sign Out
-            </button>
-          </li>
+              <li id="showMyUploadsButton">My Uploads</li>
+              <li id="showUploadsButton">Browse All Uploads</li>
+              <li data-toggle="modal" data-target="#create-upload-modal" id="createUploadButton" class="upload-link">Upload File</li>
+            </ul>
+            <ul class="user-link sidebar-nav">
+              <li data-toggle="modal" data-target="#change-password-modal" id="changePasswordButton">Change Password</li>
+              <li id="sign-out">Sign Out</li>
           </ul>
     </nav>
     <!-- </div> -->

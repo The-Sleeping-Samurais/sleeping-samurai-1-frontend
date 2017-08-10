@@ -141,12 +141,42 @@ hr {
 .sidebar-nav li {
   text-indent: 20px;
   line-height: 40px;
+  color: white;
+  border: thin solid white;
+}
+
+.sidebar-nav >li:hover {
+  background-color: rgba(6, 12, 46, .7);
+  cursor: pointer;
+}
+
+.upload-link {
+  margin: 15% 0;
+  color: green !important;
+  border-color: green !important;
+  background: rgba(255, 255, 255, .1);
+}
+
+.upload-link:hover {
+  background-color: rgba(255, 255, 255, .5) !important;
+}
+
+.user-link {
+  margin-top: 1%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.user-link >li:hover {
+  background-color: rgba(243, 28, 11, .3);
 }
 
 .sidebar-nav li a {
   display: block;
   text-decoration: none;
-  color: #999;
+  color: white;
+  text-align: center;
 }
 
 .sidebar-nav li a:hover {
@@ -164,6 +194,8 @@ hr {
   height: 55px;
   font-size: 35px;
   line-height: 55px;
+  border: none;
+  margin-bottom: 15%;
 }
 .sidebar-nav > hr {
   width: 100px;
