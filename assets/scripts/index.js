@@ -4,7 +4,7 @@ const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const authEvents = require('./auth/events.js')
 const uploadEvents = require('./uploads/events')
-const dt = require('datatables.net')
+// const dt = require('datatables.net')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -32,7 +32,7 @@ $(() => {
     // $('#imageButton').toggleClass('btn-secondary')
   })
   $('#showUploadsButton').on('click', function () {
-    $('#messageBoard').text('All Uploads')
+    $('#messageBoard').text('Browsing')
   })
   $('#showMyUploadsButton').on('click', function () {
     $('#messageBoard').text('My Uploads')
