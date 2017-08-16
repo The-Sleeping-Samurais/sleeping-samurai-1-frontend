@@ -40,9 +40,9 @@ const signInFailure = () => {
 }
 
 const changePasswordSuccess = (data) => {
-  $('.change-password-message-board').text('')
+  $('.change-password-message-board').text('Password Changed.')
   $('.change-password').val('')
-  $('#change-password-modal').modal('hide')
+  // $('#change-password-modal').modal('hide')
 }
 
 const changePasswordFailure = () => {
@@ -71,6 +71,7 @@ const signOutSuccess = () => {
   $('#imageButton').hide()
   $('#fileButton').hide()
   $('#mainContainer').hide()
+  $('.change-password-message-board').text('')
   $('.change-password-message-board').text('')
 }
 
